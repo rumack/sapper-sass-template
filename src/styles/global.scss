@@ -1,0 +1,154 @@
+@import "./variables.scss";
+
+/***** CSS reset *****/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    /*The browser standard font size is 16px. I want 1rem to equal 10px. 10px is 62.5% of 16px, hence the setting below. The percentage setting means that screen zooming will work coherently on the page. Thanks to Jonas Schmedtmann for this tip. */
+    font-size: 62.5%; 
+    height: 100%;
+    scroll-behavior: smooth;
+}
+    
+body {
+    // font-family: 'Roboto', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 300;
+    color: $color-black;
+    height: 100%;
+    line-height: 1.7; 
+    font-size: calc(16px + (22 - 16) * ((100vw - 300px) / (1800 - 300)));
+    line-height: calc(1.4em + (1.6 - 1.4) * ((100vw - 300px)/(1800 - 300)));
+}
+
+
+/***** Typography *****/
+
+
+h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+    font-weight: 500;
+    font-family: 'Fira Sans', sans-serif;
+    color: $color-black;
+}
+
+.lead-text {
+    font-size: calc(18px + (24 - 18) * ((100vw - 300px) / (1800 - 300)));
+    line-height: calc(1.4em + (1.6 - 1.4) * ((100vw - 300px)/(1800 - 300)));
+}
+
+.small-text {
+    font-size: calc(13px + (16 - 13) * ((100vw - 300px) / (1800 - 300)));
+    line-height: calc(1.4em + (1.6 - 1.4) * ((100vw - 300px)/(1800 - 300)));
+}
+
+.extra-small-text {
+    font-size: calc(12px + (14 - 12) * ((100vw - 300px) / (1800 - 300)));
+    line-height: calc(1.4em + (1.6 - 1.4) * ((100vw - 300px)/(1800 - 300)));
+}
+
+h1 {
+    font-size: calc(32px + (54 - 32) * ((100vw - 300px) / (1800 - 300)));
+    line-height: calc(1.4em + (1.6 - 1.4) * ((100vw - 300px)/(1800 - 300)));
+}
+
+h2 {
+    font-size: calc(28px + (48 - 26) * ((100vw - 300px) / (1800 - 300)));
+    line-height: calc(1.4em + (1.6 - 1.4) * ((100vw - 300px)/(1800 - 300)));
+}
+
+h3 {
+    font-size: calc(20px + (33 - 20) * ((100vw - 300px) / (1800 - 300)));
+    line-height: calc(1.4em + (1.6 - 1.4) * ((100vw - 300px)/(1800 - 300)));
+}
+
+h4 {
+    font-size: calc(16px + (24 - 16) * ((100vw - 300px) / (1800 - 300)));
+    line-height: calc(1.4em + (1.6 - 1.4) * ((100vw - 300px)/(1800 - 300)));
+}
+
+h5 {
+    font-size: calc(14px + (18 - 14) * ((100vw - 300px) / (1800 - 300)));
+    line-height: calc(1.4em + (1.6 - 1.4) * ((100vw - 300px)/(1800 - 300)));
+}
+
+h6 {
+    font-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1800 - 300)));
+    line-height: calc(1.4em + (1.6 - 1.4) * ((100vw - 300px)/(1800 - 300)));
+}
+
+p + p {
+    margin-top: 2rem;
+}
+
+/*Inputs and buttons*/
+
+input, select, textarea, button {
+    font-family:inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+
+/*In Firefox, this removes the red box-shadow from inputs with 'required' attribute*/
+[required] {               
+    box-shadow: none;
+}
+
+/*LAYOUT*/
+
+/******* REM settings *******/
+
+/*1200px*/
+@media only screen and (max-width: 75em) {
+
+    html {
+        font-size: 58%;
+    }
+}
+
+/*900px*/
+@media only screen and (max-width: 56.25em) {
+
+    html {
+        font-size: 52%;
+    }
+}
+
+@media only screen and (max-width: 36em) {
+
+    html {
+        font-size: 48%;
+    }
+}
+
+section {
+    width: 75%;
+    margin: 0 auto;
+
+    @media only screen and (max-width: 100em) {
+        width: 85%;
+    }
+
+    @media only screen and (max-width: 75em) {
+        width: 95%;
+    }
+}
